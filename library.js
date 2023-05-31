@@ -13,7 +13,7 @@ class Library {
 
     purchase(itemName){
         let soughtItem = this.contents.find(item => item.item === itemName)
-        soughtItem.quantity--;
+        soughtItem.author--;
     }
 
     outOfStock (itemName) {
@@ -23,7 +23,7 @@ class Library {
 
     notFound (itemName) {
         let outItem = this.contents.find(item => item.item === itemName)
-        outItem = item;
+        outItem = name;
     }
 }
 

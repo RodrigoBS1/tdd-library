@@ -1,6 +1,6 @@
 const library = require("./library");
 
-describe("The Vending Machine", () => {
+describe("Library", () => {
     let books;
     const newBooks = [
         { name: "To Kill a Mockingbird", author: "Harper Lee" },
@@ -8,7 +8,7 @@ describe("The Vending Machine", () => {
         { name: "The Great Gatsby", author: "F. Scott Fitzgerald" },
     ];
     beforeEach(() => {
-        books = new Vendingbooks();
+        books = new ListBooks();
     });
     test("should be able to have Books be added to its inventory", () => {
         expect(books.displayContents()).toEqual([]);
@@ -27,9 +27,9 @@ describe("The Vending Machine", () => {
 
     test("should be able to issue() (check out to patrons) books", () => {
         books.stock(newBooks);
-        books.purchase("Red Onion");
+        books.purchase("Harry Poter");
 
-        expect(machine.contents).toEqual([
+        expect(books.contents).toEqual([
             { name: "To Kill a Mockingbird", author: "Harper Lee" },
             { name: "1984", author: "George Orwell" },
             { name: "The Great Gatsby", author: "F. Scott Fitzgerald" },
@@ -37,10 +37,10 @@ describe("The Vending Machine", () => {
     });
 
     test("should be able to display an accurate inventory of its books at any time", () => {
-        machine.stock(newInventory);
-        machine.outOfStock("Red Onion");
+        books.stock(newInventory);
+        books.outOfStock("Red Onion");
 
-        expect(machine.contents).toEqual([
+        expect(books.contents).toEqual([
             { name: "To Kill a Mockingbird", author: "Harper Lee" },
             { name: "1984", author: "George Orwell" },
             { name: "The Great Gatsby", author: "F. Scott Fitzgerald" },
